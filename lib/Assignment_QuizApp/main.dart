@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-class Assignment extends StatefulWidget {
-  @override
-  _AssignmentState createState() => _AssignmentState();
-}
-
-class _AssignmentState extends State<Assignment> {
-  String _text = 'test default';
+import 'package:my_app/Assignment_QuizApp/TextControl.dart';
+class Assignment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,21 +8,7 @@ class _AssignmentState extends State<Assignment> {
         appBar: AppBar(
           title: Text('Assignment'),
         ),
-        body: Container(
-          child: Column(
-            children: [
-              RaisedButton(
-                child: Text('click to change'),
-                onPressed: (){
-                  setState(() {
-                    _text = 'new text';
-                  });
-                },
-              ),
-              Text(_text)
-            ],
-          ),
-        ),
+        body: TextControl(),
       ),
     );
   }
